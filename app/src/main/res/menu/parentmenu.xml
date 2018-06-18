@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/addchild"
+        android:title="Add Child"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/changeUsernamePass"
+        android:title="Change password"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/selectedID"
+        android:title="Set Default Child"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/exitApp"
+        android:title="Exit App"
+        app:showAsAction="never" />
+</menu>

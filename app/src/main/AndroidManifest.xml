@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cybertech.childguide">
+
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Monitor"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Contro"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Login" />
+        <activity android:name=".ParentHome"
+            android:theme="@style/AppTheme2"/>
+        <activity android:name=".InstalledApps" />
+        <activity android:name=".RecentLocations" />
+        <activity android:name=".RecentCallLogs" />
+        <activity android:name=".BrowserHistory" />
+        <activity android:name=".KeyStrokes" />
+        <activity android:name=".WordMonitor" />
+        <activity android:name=".AddChildID" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" />
+
+        <service
+            android:name=".HelperService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".UpdateService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".MonitorReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".SMSReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".CallReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".ChangeUserPassword" />
+        <activity android:name=".DefaultChildID" />
+
+        <service
+            android:name=".AlarmService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".CallIntentService"
+            android:exported="false" />
+        <service
+            android:name=".SMSIntentService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".InstallAppsReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".installAppIntentService"
+            android:exported="false" />
+        <service
+            android:name=".MonitorService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".WordMonitorReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".BrowserIntentService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".BrowserReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".LocationUpdates"
+            android:exported="false"></service>
+    </application>
+
+</manifest>

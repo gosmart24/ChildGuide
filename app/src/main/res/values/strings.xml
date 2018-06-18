@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">android ChildGuide</string>
+    <string name="requiredfields">Required field cannot be empty!</string>
+    <string name="passwordmismatch">Password does not Match! please try again</string>
+    <string name="invalidpass">Invalide password</string>
+    <string name="invaldusername">Invalide Username</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="choose">Choose Child Name</string>
+</resources>
